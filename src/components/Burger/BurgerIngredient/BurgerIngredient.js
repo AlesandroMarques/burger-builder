@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import ingredientCss from './burgerIngredient.module.css';
-import PropTypes from './prop-types';
+import ingredientCss from './BurgerIngredient.module.css';
 //typically use prop types on class based compoents so will restructure this to class based 
 
 class BurgerIngredient extends Component {
@@ -23,7 +22,7 @@ class BurgerIngredient extends Component {
         case('meat'):
             ingredient = <div className = {ingredientCss.Meat}></div>
             break;
-        case('chesse'):
+        case('cheese'):
             ingredient = <div className = {ingredientCss.Cheese}></div>
             break;
         case('salad'):
@@ -45,12 +44,5 @@ class BurgerIngredient extends Component {
     
 
 }
-
-// check the prop type is a string 
-BurgerIngredient.propTypes = {
-    type: PropTypes.string.isRequired
-
-};
-
 
 export default BurgerIngredient;
