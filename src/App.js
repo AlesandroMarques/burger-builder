@@ -8,9 +8,7 @@ class App extends Component {
   return (
     <div>
      <Layout>
-       <p>
          <BurgerBuilder></BurgerBuilder>
-       </p>
      </Layout>
     </div>
   );
