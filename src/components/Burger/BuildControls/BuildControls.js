@@ -13,7 +13,15 @@ const controls = [
 const buildControls = (props) => (
 <div className = {bcsCss.BuildControls}>
     {controls.map(ctrl => (
-        <BuildControl key = {ctrl.label} label = {ctrl.label}/>
+        <BuildControl 
+            key = {ctrl.label} 
+            label = {ctrl.label}
+            //change this to es6 function to pass value
+           // added = { props.ingredientAdd}
+           // removed = { props.ingredientRemove}
+           added = { () =>props.ingredientAdd(ctrl.type)}
+           removed = { () =>props.ingredientRemove(ctrl.type)}
+            />
     ))}
 </div>
 );
