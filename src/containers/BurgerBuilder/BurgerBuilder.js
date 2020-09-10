@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
-
+import Modal from '../../components/UI/Modal/Modal';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 const INGREDIENT_PRICES = {
     salad: 0.50,
     cheese:1.00,
@@ -24,7 +25,9 @@ class BurgerBuilder extends Component {
             patty: 0
         },
         totalPrice: BASE_PRICE,
-        purchasable: false
+        purchasable: false,
+        orderSet: false
+
     }
 
     // ADD METHOD TO check update purchaseable state , called whenover something is added or removed 
@@ -39,6 +42,12 @@ class BurgerBuilder extends Component {
        
         this.setState({purchasable: purchaseState});
         
+
+    }
+
+    orderSetHandler = () =>{
+            this.setState({orderSet: true});
+
 
     }
 
@@ -91,6 +100,9 @@ for (let key in disabledInfo) {
 
     return(
         <Aux>
+            <Modal show = {this.state.orderSet}>
+                <OrderSummary ingredients={this.state.ingredients}/>
+            </Modal>
             <Burger ingredients = {this.state.ingredients} />
             <BuildControls 
             price = {this.state.totalPrice}
@@ -99,6 +111,7 @@ for (let key in disabledInfo) {
             ingredientRemove = {this.removeIngredientHandler}
             disabled = {disabledInfo}
             canCheckout = {this.state.purchasable}
+            orderSet = {this.orderSetHandler}
             />
         </Aux>
 
