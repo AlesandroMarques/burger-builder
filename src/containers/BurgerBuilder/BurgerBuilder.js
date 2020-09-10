@@ -46,7 +46,9 @@ class BurgerBuilder extends Component {
     }
 
     orderSetHandler = () =>{
-            this.setState({orderSet: true});
+
+        const orderSetCopy = this.state.orderSet;
+            this.setState({orderSet: !orderSetCopy});
 
 
     }
@@ -100,7 +102,7 @@ for (let key in disabledInfo) {
 
     return(
         <Aux>
-            <Modal show = {this.state.orderSet}>
+            <Modal show = {this.state.orderSet} modalClosed = {this.orderSetHandler}>
                 <OrderSummary ingredients={this.state.ingredients}/>
             </Modal>
             <Burger ingredients = {this.state.ingredients} />
