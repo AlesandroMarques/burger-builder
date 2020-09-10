@@ -12,6 +12,7 @@ const controls = [
 
 const buildControls = (props) => (
 <div className = {bcsCss.BuildControls}>
+<h1 className = {bcsCss.Price}>Price: ${props.price.toFixed(2)}</h1>
     {controls.map(ctrl => (
         <BuildControl 
             key = {ctrl.label} 
@@ -19,8 +20,10 @@ const buildControls = (props) => (
             //change this to es6 function to pass value
            // added = { props.ingredientAdd}
            // removed = { props.ingredientRemove}
+           IngPrice = {props.priceMap[ctrl.type]}
            added = { () =>props.ingredientAdd(ctrl.type)}
            removed = { () =>props.ingredientRemove(ctrl.type)}
+           disabled = {props.disabled[ctrl.type]}
             />
     ))}
 </div>

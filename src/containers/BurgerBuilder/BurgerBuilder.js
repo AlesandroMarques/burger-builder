@@ -57,12 +57,23 @@ class BurgerBuilder extends Component {
     }
 
 render(){
+// diable remove buttons if count is 0
+const disabledInfo = {...this.state.ingredients};
+for (let key in disabledInfo) {
+        if(disabledInfo[key] <1) {disabledInfo[key]= true;  }
+        else{disabledInfo[key]= false;}
+}
+
+
     return(
         <Aux>
-            <Burger ingredients = {this.state.ingredients}/>
+            <Burger ingredients = {this.state.ingredients} />
             <BuildControls 
+            price = {this.state.totalPrice}
+            priceMap = {INGREDIENT_PRICES}
             ingredientAdd = {this.addIngredientHandler}
             ingredientRemove = {this.removeIngredientHandler}
+            disabled = {disabledInfo}
             />
         </Aux>
 
