@@ -26,6 +26,7 @@ const buildControls = (props) => (
            disabled = {props.disabled[ctrl.type]}
             />
     ))}
+    <button className={bcsCss.OrderButton} disabled={!props.canCheckout}>PLACE ORDER</button>
 </div>
 );
 
