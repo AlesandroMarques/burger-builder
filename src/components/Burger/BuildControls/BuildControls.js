@@ -26,7 +26,10 @@ const buildControls = (props) => (
            disabled = {props.disabled[ctrl.type]}
             />
     ))}
+    <div>
     <button className={bcsCss.OrderButton} disabled={!props.canCheckout} onClick={props.orderSet}>PLACE ORDER</button>
+    <button className={bcsCss.ResetButton} disabled={!props.canCheckout} onClick={props.orderReset}>RESET</button>
+    </div>
 </div>
 );
 

@@ -45,6 +45,25 @@ class BurgerBuilder extends Component {
 
     }
 
+    orderResetHandler = () =>{
+
+        this.setState({
+            //key value pairs of ingredients names and amount of each 
+            ingredients:{
+                salad: 0,
+                bacon: 0,
+                cheese: 0,
+                patty: 0
+            },
+            totalPrice: BASE_PRICE,
+            purchasable: false,
+            orderSet: false
+    
+        });
+
+
+    }
+
     orderSetHandler = () =>{
 
         const orderSetCopy = this.state.orderSet;
@@ -121,6 +140,7 @@ for (let key in disabledInfo) {
             disabled = {disabledInfo}
             canCheckout = {this.state.purchasable}
             orderSet = {this.orderSetHandler}
+            orderReset ={this.orderResetHandler}
             />
         </Aux>
 

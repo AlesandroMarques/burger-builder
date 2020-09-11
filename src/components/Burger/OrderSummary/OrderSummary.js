@@ -24,7 +24,7 @@ const ingredientSummary = Object.keys(props.ingredients)
         // <ul> unorderted list
     <Aux>
         <h3>YOUR ORDER</h3>
-    <h4>TOTAL PRICE: ${props.price}</h4>
+        <h4>TOTAL PRICE: ${props.price}</h4>
         <p>A Burger with the following ingredients</p>
         <ul>
             {ingredientSummary}
