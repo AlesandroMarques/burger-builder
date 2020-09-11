@@ -1,6 +1,6 @@
 .SideDrawer{
     position: fixed;
-    width: 280px;
+    width: 180px;
     max-width: 70%;
     left: 0;
     top: 0;
@@ -32,4 +32,6 @@ transform: translateX(-100%);
 .Logo{
 
     height: 10%;
+    
+    margin-bottom:32px;
 }

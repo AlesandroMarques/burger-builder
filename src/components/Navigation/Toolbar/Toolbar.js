@@ -10,7 +10,7 @@ const toolbar = (props) => (
     <div className = {tbCss.Logo}>
     <BurgerLogo/>
     </div>
-    <nav>
+    <nav className={tbCss.DesktopOnly}>
         <NavigationItems/>   
     </nav> 
 </header>
