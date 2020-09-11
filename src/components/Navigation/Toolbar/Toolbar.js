@@ -7,7 +7,9 @@ const toolbar = (props) => (
 
 //placeorders for now 
 <header className={tbCss.Toolbar}>
-    <BurgerLogo></BurgerLogo>
+    <div className = {tbCss.Logo}>
+    <BurgerLogo/>
+    </div>
     <nav>
         <NavigationItems/>   
     </nav> 
