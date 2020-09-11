@@ -53,6 +53,13 @@ class BurgerBuilder extends Component {
 
     }
 
+    orderContinueHandler = () =>{
+        const price = this.state.totalPrice.toFixed(2);
+        const msg = ('CHECKOUT: $' + price );
+
+        alert(msg)
+    }
+
 
 
     // add handlers for adding and removing ingredients 
@@ -103,7 +110,7 @@ for (let key in disabledInfo) {
     return(
         <Aux>
             <Modal show = {this.state.orderSet} modalClosed = {this.orderSetHandler}>
-                <OrderSummary ingredients={this.state.ingredients}/>
+                <OrderSummary ingredients={this.state.ingredients} price={this.state.totalPrice.toFixed(2)} clickedCancel={this.orderSetHandler} clickedContinue={this.orderContinueHandler}/>
             </Modal>
             <Burger ingredients = {this.state.ingredients} />
             <BuildControls 

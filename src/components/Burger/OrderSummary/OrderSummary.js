@@ -1,5 +1,6 @@
 import React from 'react';
 import Aux from '../../../hoc/Auxiliary';
+import Button from '../../UI/Button/Button';
 
 
 //this will show a number of things 
@@ -23,14 +24,14 @@ const ingredientSummary = Object.keys(props.ingredients)
         // <ul> unorderted list
     <Aux>
         <h3>YOUR ORDER</h3>
-        <p>A Burger witht the following ingredients</p>
+    <h4>TOTAL PRICE: ${props.price}</h4>
+        <p>A Burger with the following ingredients</p>
         <ul>
             {ingredientSummary}
         </ul>
-        <p></p>
-        <button>CANCEL</button>
-        <button>CONTINUE</button>
-
+        <p>Continue To Checkout?</p>
+        <Button clicked = {props.clickedContinue} btnType = "Success">CONTINUE</Button>
+        <Button clicked = {props.clickedCancel} btnType = "Danger">CANCEL</Button>
     </Aux>
     );
 
