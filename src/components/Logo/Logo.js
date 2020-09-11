@@ -4,7 +4,9 @@ import logoCss from './Logo.module.css';
 
 const logo = (props) => (
     <div className={logoCss.Logo}>
+        <a href="/">
         <img src={burgerLogo} alt="MyBurger"/>
+        </a>
     </div>
 
 );
