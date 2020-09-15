@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Aux from '../../hoc/Auxiliary';
 import layoutCss from './Layout.module.css';
@@ -8,15 +8,44 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 // can use {return ();};
 // or ();
 
-const layout = (props) => (
-    <Aux>
-        <Toolbar/>
-        <SideDrawer/>
-        <main className = {layoutCss.Content}>
-         {props.children}
-        </main>
-    </Aux>
-    );
+class Layout extends Component {
+
+    state = {
+        showSideDrawer: false
+
+    }
+
+    toggleSideDrawerHandler = () => { 
+       // const showSide = !this.state.showSideDrawer;
+       // this.setState({showSideDrawer: showSide});
+        // above alos works 
+
+        this.setState(
+            (prevState) => {return{showSideDrawer: !prevState.showSideDrawer};
+        }
+        );
+    
+    
+    }
+
+    render(){
+
+        return (
+        <Aux>
+            <Toolbar toggle={this.toggleSideDrawerHandler}/>
+            <SideDrawer open={this.state.showSideDrawer} toggle={this.toggleSideDrawerHandler}/>
+            <main className = {layoutCss.Content}>
+             {this.props.children}
+            </main>
+        </Aux>);
+    }
+
+};
 
 
-export default layout;
+
+
+
+
+
+export default Layout;

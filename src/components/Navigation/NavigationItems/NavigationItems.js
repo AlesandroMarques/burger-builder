@@ -10,7 +10,6 @@ import NavigationItem from './NavigationItem/NavigationItem'
 // can outsort idividual links into its own component if you want also we will do that here 
 const navigationItems = () => (
 <ul className={classes.NavigationItems}>
-<NavigationItem link="/" active={true}>Menu</NavigationItem>
     <NavigationItem link="/" active={true}>Burger Builder</NavigationItem>
     <NavigationItem link="/" active={true}>Checkout</NavigationItem>
 </ul>
