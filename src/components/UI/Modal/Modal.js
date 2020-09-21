@@ -1,6 +1,6 @@
 import React from 'react';
 import modalCss from './Modal.module.css';
-import Aux from '../../../hoc/Auxiliary';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Backdrop from '../Backdrop/Backdrop'
 
 //wrapper to display things , in this case wraps our order
